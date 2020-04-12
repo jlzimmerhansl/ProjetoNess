@@ -1,0 +1,51 @@
+﻿@model ProjetoNess.Models.Pessoa
+
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+    <div class="page-wrapper">
+
+        <div class="wrapper-form container5">
+            <div class="box row">
+                <div class="col-md-7 card-heading-head">
+                    <div class="card-heading">
+                        <img src="imagens/341606-PA98GN-722.jpg" />
+                    </div>
+                </div>
+                <div class="col-md-5 box-form">
+                    <h2 class="titulo">Cadastrar usuário</h2>
+
+                    <form method="POST" action="">
+                        @Html.ValidationSummary(true)
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="Nome">Nome da Pessoa</label>
+                                <input id="Nome" name="Nome" type="text" class="form-control" placeholder="Digite o nome">
+                                @Html.ValidationMessageFor(x => x.nome)
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cpf">Cpf da Pessoa</label>
+                                <input id="cpf" name="cpf" type="text" class="form-control" placeholder="Digite o cpf">
+                                @Html.ValidationMessageFor(x => x.cpf)
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefone">Telefone da Pessoa</label>
+                                <input id="telefone" name="telefone" type="text" class="form-control" placeholder="Digite o telefone>
+                                @Html.ValidationMessageFor(x => x.telefone)
+                            </div>
+
+                            <hr />
+                            <p>
+                                <button type="submit" class="btn btn-sm btn-info">Salvar</button>
+                                <a href="@Url.Action("Index","Home")">Cancelar</a>
+                            </p>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>

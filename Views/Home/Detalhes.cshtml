@@ -1,0 +1,35 @@
+﻿@model ProjetoNess.Models.Pessoa
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+
+    <div class="page-wrapper">
+
+        <div class="wrapper-form container5">
+            <div class="box row">
+                <div class="col-md-7 card-heading-head">
+                    <div class="card-heading">
+                        <img src="imagens/341606-PA98GN-722.jpg" />
+                    </div>
+                </div>
+                <div class="col-md-5 box-form">
+                    <fieldset>
+                        <legend>Detalhes da Pessoa</legend>
+                        <div class="form-group">
+                            <strong>Nome: </strong> @Model.nome
+                            <strong>Cpf: </strong> @Model.cpf
+                            <strong>Telefone: </strong> @Model.telefone
+                        </div>
+                    </fieldset>
+
+                    <hr />
+                    <p>
+                        <a href="@Url.Action("Editar","Home", new{Id=Model.Id})" class="btn btn-sm btn-info">Editar</a>
+                        <a href="@Url.Action("Index","Home")">Voltar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>

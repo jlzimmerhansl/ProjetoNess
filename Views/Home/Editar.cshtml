@@ -1,0 +1,46 @@
+﻿@model ProjetoNess.Models.Pessoa
+@{
+    ViewBag.Title = "Editar Pessoa"
+}
+
+
+    <div class="page-wrapper">
+
+        <div class="wrapper-form container5">
+            <div class="box row">
+                <form method="POST" action="">
+                    @Html.ValidationSummary(true)
+                    <fieldset>
+
+                        <input id="Id" name="Id" type="hidden" value="@Model.Id" />
+
+                        <legend>Nova Pessoa</legend>
+                        <div class="form-group">
+                            <label for="Nome">Nome da Pessoa</label>
+                            <input id="Nome" name="Nome" type="text" value="@Model.nome" class="form-control" placeholder="Digite o nome">
+                            @Html.ValidationMessageFor(x => x.nome)
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cpf">Cpf da Pessoa</label>
+                            <input id="cpf" name="cpf" type="text" value="@Model.cpf" class="form-control" placeholder="Digite o cpf">
+                            @Html.ValidationMessageFor(x => x.cpf)
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone">Telefone da Pessoa</label>
+                            <input id="telefone" name="telefone" type="text" value="@Model.telefone" class="form-control" placeholder="Digite o telefone">
+                            @Html.ValidationMessageFor(x => x.telefone)
+                        </div>
+
+                        <hr />
+                        <p>
+                            <button type="submit" class="btn btn-sm btn-info">Salvar</button>
+                            <a href="@Url.Action("Index","Home")">Cancelar</a>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
